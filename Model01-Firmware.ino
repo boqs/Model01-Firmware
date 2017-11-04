@@ -159,9 +159,9 @@ const Key keymaps[][ROWS][COLS] PROGMEM = {
 
   [NUMPAD] =  KEYMAP_STACKED
   (___, ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___, ___,
+   ___,  ___,              Key_mouseUp, ___,        Key_mouseBtnR, Key_mouseWarpEnd, Key_mouseWarpNE,
+   ___, Key_mouseL,       Key_mouseDn, Key_mouseR, Key_mouseBtnL, Key_mouseWarpNW,
+   ___,  ___,  ___,  ___,        Key_mouseBtnM, Key_mouseWarpSW,  Key_mouseWarpSE,
    ___, ___, ___, ___,
    ___,
 
@@ -332,6 +332,9 @@ void setup() {
   // with USB devices
   // LEDOff.activate();
   StalkerEffect.activate();
+
+  MouseKeys.speed = 7;
+  MouseKeys.speedDelay = 3;
 }
 
 /** loop is the second of the standard Arduino sketch functions.
