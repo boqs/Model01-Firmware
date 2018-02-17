@@ -153,7 +153,7 @@ const Key keymaps[][ROWS][COLS] PROGMEM = {
    Consumer_PlaySlashPause,    Consumer_ScanNextTrack, Key_LeftCurlyBracket,     Key_RightCurlyBracket,    Key_LeftBracket, Key_RightBracket, Key_F12,
    Key_LeftArrow,          Key_DownArrow,            Key_UpArrow,              Key_RightArrow,  Key_Backslash,             LSHIFT(Key_Backslash),
    Key_PcApplication,          Key_Mute,               Consumer_VolumeDecrement, Consumer_VolumeIncrement, ___,             Key_NonUsBackslashAndPipe,    LSHIFT(Key_NonUsBackslashAndPipe),
-   ___, ___, Key_Enter, ___,
+   Key_mouseScrollDn, Key_mouseScrollUp, Key_Enter, ___,
    ___),
 
 
@@ -335,6 +335,13 @@ void setup() {
 
   MouseKeys.speed = 7;
   MouseKeys.speedDelay = 3;
+  MouseKeys.accelSpeed = 1;
+  MouseKeys.accelDelay = 100;
+  
+  MouseKeys.wheelSpeed = 0.1;
+  MouseKeys.wheelDelay = 50;
+  
+  
 }
 
 /** loop is the second of the standard Arduino sketch functions.
